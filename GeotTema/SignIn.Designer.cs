@@ -1,6 +1,6 @@
 ﻿namespace GeotTema
 {
-    partial class Form1
+    partial class SignIn
     {
         /// <summary>
         /// Required designer variable.
@@ -47,6 +47,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Sign In";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -121,7 +122,7 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Dont have an account?";
             // 
-            // Form1
+            // SignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -135,7 +136,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Name = "SignIn";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

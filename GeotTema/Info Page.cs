@@ -12,9 +12,16 @@ namespace GeotTema
 {
     public partial class Info_Page : Form
     {
+        List<Table> table = new List<Table>();
         public Info_Page()
         {
             InitializeComponent();
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            SqlCommands db = new SqlCommands();
+            table = db.GetTable(SearchBox.Text);
         }
     }
 }

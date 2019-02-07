@@ -9,8 +9,9 @@ namespace GeotTema
 {
     class SqlCommands
     {
-        public static void con () {
-            string cnn = @"Datasource = 192.168.4.12\WIN-4ERU9A3T3BP";
+        public List<Table> GetTable(string Land)
+        {
+            throw new NotImplementedException();
         }
     }
 }

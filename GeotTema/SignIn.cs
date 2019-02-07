@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GeotTema
 {
-    public partial class Form1 : Form
+    public partial class SignIn : Form
     {
-        public Form1()
+        public SignIn()
         {
             InitializeComponent();
         }
@@ -28,6 +28,11 @@ namespace GeotTema
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

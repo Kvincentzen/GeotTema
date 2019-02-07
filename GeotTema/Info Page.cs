@@ -16,6 +16,9 @@ namespace GeotTema
         public Info_Page()
         {
             InitializeComponent();
+
+            dataGridView1.DataSource = table;
+            //dataGridView1.DislayMember
         }
 
         private void SearchButton_Click(object sender, EventArgs e)

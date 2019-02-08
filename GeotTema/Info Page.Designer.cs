@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.SearchBox = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Info_PageGridView = new System.Windows.Forms.DataGridView();
             this.SearchButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Info_PageGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // SearchBox
@@ -42,14 +42,14 @@
             this.SearchBox.TabIndex = 0;
             this.SearchBox.Text = "Search";
             // 
-            // dataGridView1
+            // Info_PageGridView
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 67);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(719, 353);
-            this.dataGridView1.TabIndex = 1;
+            this.Info_PageGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Info_PageGridView.Location = new System.Drawing.Point(39, 67);
+            this.Info_PageGridView.Name = "Info_PageGridView";
+            this.Info_PageGridView.Size = new System.Drawing.Size(719, 353);
+            this.Info_PageGridView.TabIndex = 1;
+            this.Info_PageGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LandeGrid_CellContentClick);
             // 
             // SearchButton
             // 
@@ -67,11 +67,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Info_PageGridView);
             this.Controls.Add(this.SearchBox);
             this.Name = "Info_Page";
             this.Text = "Info_Page";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Info_Page_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Info_PageGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,7 +81,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox SearchBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Info_PageGridView;
         private System.Windows.Forms.Button SearchButton;
     }
 }

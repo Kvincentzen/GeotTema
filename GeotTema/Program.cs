@@ -16,7 +16,7 @@ namespace GeotTema
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SignIn());
+            Application.Run(new Info_Page());
         }
     }
 }

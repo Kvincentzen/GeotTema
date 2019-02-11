@@ -8,20 +8,22 @@ namespace GeotTema
 {
     class Table
     {
-        public int id { get; set; }
+        public int ID { get; set; }
 
         public string Lande { get; set; }
 
+        public string Verdensdel { get; set; }
+
         public string Rang { get; set; }
 
-        public string Foedselsrate { get; set; }
+        public string Fodselsrate { get; set; }
 
-        public string FullInfo
+        /*public string FullInfo
         {
             get
             {
-                return $"{ Lande } { Rang } { Foedselsrate } ";
+                return $"{ id } { Lande } { Rang } { Foedselsrate } ";
             }
-        }
+        }*/
     }
 }

@@ -34,7 +34,7 @@ namespace GeotTema
 
         private void Info_Page_Load(object sender, EventArgs e)
         {
-            Info_PageGridView.DataSource = db.GetTable("'*'");
+            Info_PageGridView.DataSource = db.GetTable("*");
 
         }
     }

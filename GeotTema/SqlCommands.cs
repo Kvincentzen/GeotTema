@@ -15,7 +15,14 @@ namespace GeotTema
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("GeoTemaDB")))
             {
-                return connection.Query<Table>($"select * from Lande where Lande = '{Land}'").ToList();
+                return connection.Query<Table>($"select {Land} from Lande, Rang where Lande.ID = Rang.ID").ToList();
+            }
+        }
+        public List<Table> SearchTable(string Land)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("GeoTemaDB")))
+            {
+                return connection.Query<Table>($"select * from Lande where Lande.Lande = {Land} full outer join Rang on Lande.ID = Rang.ID").ToList();
             }
         }
     }

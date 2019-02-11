@@ -24,7 +24,8 @@ namespace GeotTema
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            table = db.GetTable(SearchBox.Text);
+            //table = db.SearchTable(SearchBox.Text);
+            Info_PageGridView.DataSource = db.SearchTable(SearchBox.Text);
         }
 
         private void LandeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)

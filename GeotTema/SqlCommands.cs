@@ -22,7 +22,7 @@ namespace GeotTema
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("GeoTemaDB")))
             {
-                return connection.Query<Table>($"select * from Lande where Lande.Lande = {Land} full outer join Rang on Lande.ID = Rang.ID").ToList();
+                return connection.Query<Table>($"select Lande, Rang from Lande join Rang on Lande.ID = Rang.ID where Lande.Lande = {Land}").ToList();
             }
         }
     }

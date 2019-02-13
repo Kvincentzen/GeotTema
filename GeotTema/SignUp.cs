@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
 
 namespace GeotTema
 {
     public partial class SignUp : Form
     {
+        SqlCommands sudb = new SqlCommands();
         public SignUp()
         {
             InitializeComponent();
@@ -20,6 +22,19 @@ namespace GeotTema
         private void SignUp_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (textBox2.Text == textBox3.Text)
+            {
+                SqlCommands.CreateLogin(textBox1.Text, textBox2.Text);
+
+            }
+            else
+            {
+
+            }
         }
     }
 }

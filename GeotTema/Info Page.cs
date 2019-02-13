@@ -12,7 +12,7 @@ namespace GeotTema
 {
     public partial class Info_Page : Form
     {
-        SqlCommands db = new SqlCommands();
+        SqlCommands ipdb = new SqlCommands();
         List<Table> table = new List<Table>();
         public Info_Page()
         {
@@ -25,7 +25,7 @@ namespace GeotTema
         private void SearchButton_Click(object sender, EventArgs e)
         {
             //table = db.SearchTable(SearchBox.Text);
-            Info_PageGridView.DataSource = db.SearchTable(SearchBox.Text);
+            Info_PageGridView.DataSource = ipdb.SearchTable(SearchBox.Text);
         }
 
         private void LandeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -35,7 +35,7 @@ namespace GeotTema
 
         private void Info_Page_Load(object sender, EventArgs e)
         {
-            Info_PageGridView.DataSource = db.GetTable("*");
+            Info_PageGridView.DataSource = ipdb.GetTable("*");
 
         }
     }

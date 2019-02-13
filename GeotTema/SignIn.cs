@@ -34,7 +34,11 @@ namespace GeotTema
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            /*using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("GeoTemaDB")))
+            {
+                return ($"CREATE LOGIN<{textBox1.Text}> WITH PASSWORD = '<{textBox2.Text}>");
+            }
+            */
         }
     }
 }

@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace GeotTema
 {
     public partial class SignIn : Form
     {
+        SqlCommands lgin = new SqlCommands();
         public SignIn()
         {
             InitializeComponent();
@@ -29,16 +31,32 @@ namespace GeotTema
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            MessageBox.Show("Contact your host admin");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("GeoTemaDB")))
+            bool b = lgin.Login(textBox1.Text, textBox2.Text);
+            if (b == true)
             {
-                return ($"CREATE LOGIN<{textBox1.Text}> WITH PASSWORD = '<{textBox2.Text}>");
+                this.Hide();
+                Info_Page f2 = new Info_Page();
+                f2.ShowDialog();
+                
+                this.Close();
             }
-            */
+            else
+            {
+                MessageBox.Show("Du kunne ikke logge ind ");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SignUp f3 = new SignUp();
+            f3.ShowDialog();
+            this.Close();
         }
     }
 }

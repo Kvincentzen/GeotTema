@@ -14,6 +14,8 @@ namespace GeotTema
     {
         SqlCommands ipdb = new SqlCommands();
         List<Table> table = new List<Table>();
+        public string name = "sql_admin";
+        public string pass = "Passw0rd";
         public Info_Page()
         {
             InitializeComponent();
@@ -32,11 +34,17 @@ namespace GeotTema
         {
 
         }
-
+        
         private void Info_Page_Load(object sender, EventArgs e)
         {
-            Info_PageGridView.DataSource = ipdb.GetTable("*");
+            Info_PageGridView.DataSource = ipdb.GetTable();
+            chart1.DataSource = ipdb.GetTable();
+        }
 
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+            Info_PageGridView.DataSource = ipdb.SearchTable(SearchBox.Text);
+            
         }
     }
 }

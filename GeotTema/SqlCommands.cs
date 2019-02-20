@@ -23,11 +23,19 @@ namespace GeotTema
                 return connection.Query<Table>($"select * from Lande").ToList();
             }
         }
-        public DataTable GetDataTable()
+        public static DataTable GetData(string query)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("GeoTemaDB")))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["GeoTemaDB"].ConnectionString))
             {
-                string connection.Query<Table>($"select * from Lande").ToList();
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    DataTable dt = new DataTable();
+                    using (SqlDataAdapter sda = new SqlDataAdapter(query, con))
+                    {
+                        sda.Fill(dt);
+                    }
+                    return dt;
+                }
             }
         }
         public List<Table> SearchTable(string Land)
@@ -53,10 +61,10 @@ namespace GeotTema
                     con.Open();
                     SqlCommand cmd = new SqlCommand(sql, con);
                     cmd.ExecuteNonQuery();
+                    con.Close();
                 }
                 catch (Exception)
                 {
-
                 }
             }
         }

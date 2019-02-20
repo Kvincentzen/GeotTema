@@ -19,14 +19,10 @@ namespace GeotTema
         public Info_Page()
         {
             InitializeComponent();
-            //SqlCommands db = new SqlCommands();
-            //dataGridView1.DataSource = db.GetTable ;
-            //dataGridView1.DislayMember
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            //table = db.SearchTable(SearchBox.Text);
             Info_PageGridView.DataSource = ipdb.SearchTable(SearchBox.Text);
         }
 
@@ -38,13 +34,17 @@ namespace GeotTema
         private void Info_Page_Load(object sender, EventArgs e)
         {
             Info_PageGridView.DataSource = ipdb.GetTable();
-            chart1.DataSource = ipdb.GetTable();
+            string query = string.Format("select * from Lande");
+            DataTable dt = SqlCommands.GetData(query);
+            chart1.DataSource = dt;
+            chart1.Series[0].XValueMember = "Lande";
+            chart1.Series[0].YValueMembers = "Fodselsrate";
+            chart1.DataBind();
         }
 
         private void SearchBox_TextChanged(object sender, EventArgs e)
         {
             Info_PageGridView.DataSource = ipdb.SearchTable(SearchBox.Text);
-            
         }
     }
 }

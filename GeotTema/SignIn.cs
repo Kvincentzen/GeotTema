@@ -42,7 +42,6 @@ namespace GeotTema
                 this.Hide();
                 Info_Page f2 = new Info_Page();
                 f2.ShowDialog();
-                
                 this.Close();
             }
             else

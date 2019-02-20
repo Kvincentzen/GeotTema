@@ -18,10 +18,8 @@ namespace GeotTema
         {
             InitializeComponent();
         }
-
         private void SignUp_Load(object sender, EventArgs e)
         {
-
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -43,14 +41,11 @@ namespace GeotTema
                 {
                     MessageBox.Show("Bad Pass");
                 }
-
             }
             else
             {
-
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -58,7 +53,6 @@ namespace GeotTema
             f1.ShowDialog();
             this.Close();
         }
-
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             if (textBox2.Text == textBox3.Text)
@@ -66,6 +60,18 @@ namespace GeotTema
                 label6.Text = "Password er ens";
             }
             else if (textBox2.Text != textBox3.Text) 
+            {
+                label6.Text = "Password er ikke ens";
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if(textBox2.Text == textBox3.Text)
+            {
+                label6.Text = "Password er ens";
+            }
+            else if (textBox2.Text != textBox3.Text)
             {
                 label6.Text = "Password er ikke ens";
             }

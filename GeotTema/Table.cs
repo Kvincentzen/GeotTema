@@ -17,13 +17,5 @@ namespace GeotTema
         public string Rang { get; set; }
 
         public string Fodselsrate { get; set; }
-
-        /*public string FullInfo
-        {
-            get
-            {
-                return $"{ id } { Lande } { Rang } { Foedselsrate } ";
-            }
-        }*/
     }
 }
